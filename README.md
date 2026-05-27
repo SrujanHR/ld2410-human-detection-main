@@ -206,12 +206,12 @@ See [`docs/troubleshooting.md`](docs/troubleshooting.md) for detailed solutions.
 
 ---
 
+## Project: CSR Body Detection Sensor Network  
 ## Developed By
 
 **Gagan Manjunath**  
 NIE - South, Mysuru
-Electronics and Communication Engineering (ECE)  
-Project: CSR Body Detection Sensor Network  
+Electronics and Communication Engineering (ECE)   
 
 **Srujan H R**
 Yuvaraja's College, Mysuru
