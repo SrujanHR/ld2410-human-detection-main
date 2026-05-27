@@ -1,0 +1,5 @@
+# requirements.txt
+# Install via: sudo apt install python3-serial
+# OR: pip install -r requirements.txt (inside a venv)
+
+pyserial>=3.5

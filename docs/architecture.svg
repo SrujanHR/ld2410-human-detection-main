@@ -1,0 +1,130 @@
+<svg viewBox="0 0 820 480" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="sensor_grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f6feb"/>
+      <stop offset="100%" stop-color="#0d419d"/>
+    </linearGradient>
+    <linearGradient id="pi_grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#238636"/>
+      <stop offset="100%" stop-color="#196127"/>
+    </linearGradient>
+    <linearGradient id="web_grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9e6a03"/>
+      <stop offset="100%" stop-color="#6e4c00"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrow_green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3fb950"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="480" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="410" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#58a6ff" letter-spacing="2">MULTI-SENSOR HUMAN DETECTION SYSTEM — ARCHITECTURE</text>
+  <line x1="60" y1="46" x2="760" y2="46" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ─── SENSORS (left column) ─── -->
+  <!-- Sensor 1 -->
+  <rect x="40" y="80" width="130" height="72" rx="8" fill="url(#sensor_grad)" stroke="#1f6feb" stroke-width="1.5"/>
+  <text x="105" y="102" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">LD2410S</text>
+  <text x="105" y="118" text-anchor="middle" font-size="10" fill="#a5d6ff">Sensor 1 — LEFT</text>
+  <text x="105" y="133" text-anchor="middle" font-size="9" fill="#8b949e">GPIO14/15</text>
+  <text x="105" y="147" text-anchor="middle" font-size="9" fill="#8b949e">/dev/ttyAMA0</text>
+
+  <!-- Sensor 2 -->
+  <rect x="40" y="194" width="130" height="72" rx="8" fill="url(#sensor_grad)" stroke="#1f6feb" stroke-width="1.5"/>
+  <text x="105" y="216" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">LD2410S</text>
+  <text x="105" y="232" text-anchor="middle" font-size="10" fill="#a5d6ff">Sensor 2 — CENTER</text>
+  <text x="105" y="247" text-anchor="middle" font-size="9" fill="#8b949e">GPIO4/5</text>
+  <text x="105" y="261" text-anchor="middle" font-size="9" fill="#8b949e">/dev/ttyAMA3</text>
+
+  <!-- Sensor 3 -->
+  <rect x="40" y="308" width="130" height="72" rx="8" fill="url(#sensor_grad)" stroke="#1f6feb" stroke-width="1.5"/>
+  <text x="105" y="330" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">LD2410S</text>
+  <text x="105" y="346" text-anchor="middle" font-size="10" fill="#a5d6ff">Sensor 3 — RIGHT</text>
+  <text x="105" y="361" text-anchor="middle" font-size="9" fill="#8b949e">GPIO12/13</text>
+  <text x="105" y="375" text-anchor="middle" font-size="9" fill="#8b949e">/dev/ttyAMA4</text>
+
+  <!-- UART arrows sensor → pi -->
+  <line x1="170" y1="116" x2="290" y2="200" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="5,3"/>
+  <line x1="170" y1="230" x2="290" y2="230" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="170" y1="344" x2="290" y2="260" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="5,3"/>
+
+  <!-- UART labels -->
+  <text x="210" y="163" font-size="8" fill="#58a6ff">UART0</text>
+  <text x="196" y="222" font-size="8" fill="#58a6ff">UART3</text>
+  <text x="210" y="318" font-size="8" fill="#58a6ff">UART4</text>
+
+  <!-- ─── RASPBERRY PI (centre) ─── -->
+  <rect x="290" y="100" width="240" height="280" rx="12" fill="#161b22" stroke="#238636" stroke-width="2" filter="url(#glow)"/>
+  <text x="410" y="126" text-anchor="middle" font-size="13" font-weight="bold" fill="#3fb950">Raspberry Pi 4B</text>
+  <line x1="300" y1="134" x2="520" y2="134" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Modules inside Pi -->
+  <!-- uart_reader.py -->
+  <rect x="308" y="144" width="102" height="40" rx="6" fill="#21262d" stroke="#30363d"/>
+  <text x="359" y="160" text-anchor="middle" font-size="9" fill="#8b949e">uart_reader.py</text>
+  <text x="359" y="175" text-anchor="middle" font-size="8" fill="#6e7681">Read + Reconnect</text>
+
+  <!-- sensor_parser.py -->
+  <rect x="420" y="144" width="102" height="40" rx="6" fill="#21262d" stroke="#30363d"/>
+  <text x="471" y="160" text-anchor="middle" font-size="9" fill="#8b949e">sensor_parser.py</text>
+  <text x="471" y="175" text-anchor="middle" font-size="8" fill="#6e7681">Binary Decode</text>
+
+  <!-- main.py -->
+  <rect x="330" y="210" width="160" height="50" rx="6" fill="#21262d" stroke="#3fb950" stroke-width="1.2"/>
+  <text x="410" y="230" text-anchor="middle" font-size="10" font-weight="bold" fill="#3fb950">main.py</text>
+  <text x="410" y="245" text-anchor="middle" font-size="8" fill="#8b949e">Threads + State + Direction</text>
+  <text x="410" y="257" text-anchor="middle" font-size="8" fill="#6e7681">Sensor Fusion Logic</text>
+
+  <!-- web_server.py -->
+  <rect x="330" y="280" width="160" height="40" rx="6" fill="#21262d" stroke="#30363d"/>
+  <text x="410" y="297" text-anchor="middle" font-size="9" fill="#8b949e">web_server.py</text>
+  <text x="410" y="312" text-anchor="middle" font-size="8" fill="#6e7681">HTTP + JSON endpoint</text>
+
+  <!-- output.json -->
+  <rect x="340" y="340" width="140" height="30" rx="6" fill="#21262d" stroke="#30363d"/>
+  <text x="410" y="360" text-anchor="middle" font-size="9" fill="#8b949e">output.json (live data)</text>
+
+  <!-- internal arrows -->
+  <line x1="410" y1="184" x2="410" y2="210" stroke="#30363d" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="410" y1="260" x2="410" y2="280" stroke="#30363d" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="410" y1="320" x2="410" y2="340" stroke="#30363d" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- ─── WEB DASHBOARD (right) ─── -->
+  <rect x="590" y="140" width="180" height="100" rx="10" fill="url(#web_grad)" stroke="#d29922" stroke-width="1.5"/>
+  <text x="680" y="165" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">Web Dashboard</text>
+  <text x="680" y="183" text-anchor="middle" font-size="9" fill="#ffd680">http://&lt;PI_IP&gt;:8000</text>
+  <text x="680" y="199" text-anchor="middle" font-size="8.5" fill="#f0c040">Live sensor cards</text>
+  <text x="680" y="213" text-anchor="middle" font-size="8.5" fill="#f0c040">Direction indicator</text>
+  <text x="680" y="227" text-anchor="middle" font-size="8.5" fill="#f0c040">Auto-refresh 500ms</text>
+
+  <!-- Browser / phone icon box -->
+  <rect x="610" y="280" width="140" height="50" rx="8" fill="#21262d" stroke="#30363d"/>
+  <text x="680" y="300" text-anchor="middle" font-size="10" fill="#8b949e">📱 Phone / PC</text>
+  <text x="680" y="318" text-anchor="middle" font-size="8" fill="#6e7681">Same Wi-Fi / Hotspot</text>
+
+  <!-- Pi → Web arrow -->
+  <line x1="530" y1="190" x2="590" y2="190" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrow_green)"/>
+  <text x="558" y="183" font-size="8" fill="#3fb950">HTTP</text>
+
+  <!-- Web → Browser arrow -->
+  <line x1="680" y1="240" x2="680" y2="280" stroke="#d29922" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <!-- ─── POWER NOTE ─── -->
+  <rect x="40" y="420" width="740" height="36" rx="7" fill="#21262d" stroke="#30363d"/>
+  <text x="410" y="434" text-anchor="middle" font-size="9" fill="#8b949e">⚡ Power: Samsung EP-TA800 charger — 5V @ 3A via USB-C  |  All 3 sensors share Pi 3.3V rail (~300 mA total, within 500 mA limit)</text>
+  <text x="410" y="449" text-anchor="middle" font-size="9" fill="#6e7681">256000 baud  |  3.3V UART (no level shifter needed)  |  Binary frame protocol — parsed manually</text>
+</svg>
