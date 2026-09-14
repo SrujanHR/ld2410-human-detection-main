@@ -4,8 +4,9 @@
 ---
 ## Demo
 
-<video src="https://github.com/SrujanHR/ld2410-human-detection-main/blob/main/VID-20250619-WA0003.mp4" controls width="800"></video>
-
+<video controls width="800">
+  <source src="https://github.com/SrujanHR/ld2410-human-detection-main/blob/main/VID-20250619-WA0003.mp4" type="video/mp4">
+</video>
 ---
 
 ## Overview
