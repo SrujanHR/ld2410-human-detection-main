@@ -2,6 +2,10 @@
 ### LD2410S mmWave Radar × Raspberry Pi 4B
 
 ---
+## Demo
+[Watch the demo video]()
+
+---
 
 ## Overview
 
