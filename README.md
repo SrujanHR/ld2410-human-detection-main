@@ -3,7 +3,7 @@
 
 ---
 ## Demo
-[Watch the demo video]()
+[Watch the demo video](https://github.com/SrujanHR/ld2410-human-detection-main/blob/main/VID-20250619-WA0003.mp4)
 
 ---
 
